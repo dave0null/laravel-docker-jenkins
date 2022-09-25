@@ -30,15 +30,15 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     working_dir: /var/www/html
     ports:
-      - "8080:80"
-      - "443:443"
+      - "8080:8000"
+      - "4430:443"
     networks:
       - app-network
 
 
   # MySql Database
   mysql:
-    image: mysql:latest
+    image: mysql:5.7
     container_name: mysql
     restart: unless-stopped
     ports:
